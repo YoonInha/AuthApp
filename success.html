@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Success</title>
+    <script>
+        window.onload = function() {
+            const code = localStorage.getItem('auth_code');
+            if (code) {
+                document.getElementById('auth-code').textContent = code;
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>OAuth Success</h1>
+    <p>Your authorization code is: <span id="auth-code"></span></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth Redirect</title>
+    <script>
+        window.onload = function() {
+            const params = new URLSearchParams(window.location.search);
+            const code = params.get('code');
+            if (code) {
+                // 인증 코드가 있는 경우, 이를 로컬 스토리지에 저장하거나 다음 단계로 전달
+                localStorage.setItem('auth_code', code);
+                window.location.href = '/success.html';  // 성공 페이지로 리디렉션
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>OAuth Redirect</h1>
+    <p>Redirecting...</p>
+</body>
+</html>
